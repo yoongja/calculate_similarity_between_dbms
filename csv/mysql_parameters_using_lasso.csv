@@ -1,0 +1,46 @@
+Parameter,Description
+innodb-buffer-pool-size=#,The size of the memory buffer InnoDB uses to cache data and indexes of its tables.
+innodb-log-file-size=#,Size of each log file before upgrading to 8.0.30. Deprecated.
+innodb-log-buffer-size=#,The size of the buffer which InnoDB uses to write log to the log files on disk.
+innodb-flush-log-at-trx-commit[=#],"Set to 0 (write and flush once per second), 1 (write and flush at each commit), or 2 (write at commit, flush once per second)."
+innodb-flush-method=name,With which method to flush data
+innodb-io-capacity=#,Number of IOPs the server can do. Tunes the background IO rate
+innodb-io-capacity-max=#,Limit to which innodb_io_capacity can be inflated.
+innodb-max-dirty-pages-pct=#,Percentage of dirty pages allowed in bufferpool.
+innodb-max-dirty-pages-pct-lwm=#,Percentage of dirty pages at which flushing kicks in.
+innodb-file-per-table,Stores each InnoDB table to an .ibd file in the database dir. (Defaults to on; use --skip-innodb-file-per-table to disable.)
+innodb-read-io-threads=#,Number of background read I/O threads in InnoDB.
+innodb-write-io-threads=#,Number of background write I/O threads in InnoDB.
+max-connections=#,The number of simultaneous clients allowed
+mysqlx-max-connections[=#],Maximum number of concurrent X protocol connections. Actual number of connections is also affected by the general max_connections.
+table-open-cache=#,The number of cached open tables (total for all table cache instances)
+table-open-cache-instances=#,The number of table cache instances
+thread-cache-size=#,How many threads we should keep in a cache for reuse
+tmp-table-size=#,"If an internal in-memory temporary table in the MEMORY or TempTable storage engine exceeds this size, MySQL will automatically convert it to an on-disk table"
+max-heap-table-size=#,Don't allow creation of heap tables bigger than this
+join-buffer-size=#,The size of the buffer that is used for full joins
+innodb-sort-buffer-size=#,Memory buffer size for index creation
+myisam-sort-buffer-size=#,The buffer that is allocated when sorting the index when doing a REPAIR or when creating indexes with CREATE INDEX or ALTER TABLE
+sort-buffer-size=#,Each thread that needs to do a sort allocates a buffer of this size
+read-buffer-size=#,Each thread that does a sequential scan allocates a buffer of this size for each table it scans.
+read-rnd-buffer-size=#,"When reading rows in sorted order after a sort, the rows are read through this buffer to avoid a disk seeks."
+key-buffer-size=#,The size of the buffer used for index blocks for MyISAM tables. Increase this to get better index handling (for all reads and multiple writes) to as much as you can afford
+bulk-insert-buffer-size=#,Size of tree cache used in bulk insert optimisation. Note that this is a limit per thread!
+innodb-thread-concurrency=#,Helps in performance tuning in heavily concurrent environments. Sets the maximum number of threads allowed inside InnoDB. Value 0 will disable the thread throttling.
+innodb-adaptive-hash-index,Enable InnoDB adaptive hash index (enabled by default). Disable with --skip-innodb-adaptive-hash-index.
+innodb-adaptive-hash-index-parts[=#],Number of InnoDB Adaptive Hash Index Partitions. (default = 8).
+innodb-flush-neighbors[=#],"Set to 0 (don't flush neighbors from buffer pool), 1 (flush contiguous neighbors from buffer pool) or 2 (flush neighbors from buffer pool), when flushing a block"
+innodb-lru-scan-depth=#,How deep to scan LRU to keep it clean
+innodb-old-blocks-pct=#,Percentage of the buffer pool to reserve for 'old' blocks.
+innodb-old-blocks-time=#,Move blocks to the 'new' end of the buffer pool if the first access was at least this many milliseconds ago. The timeout is disabled if 0.
+innodb-purge-threads[=#],"Purge threads can be from 1 to 32. Default is 1 if number of available CPUs is 16 or less, 4 otherwise."
+max-allowed-packet=#,Max packet length to send to or receive from the server
+mysqlx-max-allowed-packet[=#],Size of largest message that client is going to handle.
+replica-max-allowed-packet=#,The maximum size of packets sent from an upstream source server to this server.
+slave-max-allowed-packet=#,This option is deprecated. Use replica_max_allowed_packet instead.
+max-heap-table-size=#,Don't allow creation of heap tables bigger than this
+innodb-online-alter-log-max-size=#,Maximum modification log file size for online index creation
+key-cache-age-threshold=#,This characterizes the number of hits a hot block has to be untouched until it is considered aged enough to be downgraded to a warm block. This specifies the percentage ratio of that number of hits to the total number of blocks in key cache
+binlog-cache-size=#,"The size of the transactional cache for updates to transactional engines for the binary log. If you often use transactions containing many statements, you can increase this to get more performance"
+max-binlog-cache-size=#,Sets the total size of the transactional cache
+innodb-sort-buffer-size=#,Memory buffer size for index creation
